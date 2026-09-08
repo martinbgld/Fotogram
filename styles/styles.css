@@ -58,7 +58,6 @@ body {
 .thumb-slider{
     width: 100%;
     max-width: 1200px;
-    border: 2px solid grey;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, 150px);
