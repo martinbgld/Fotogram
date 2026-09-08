@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogram</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/fonts.css">
+
+    <script src="/script.js" defer></script>
+
+</head>
+
+<body onload="init()">
+    <header class="header">
+        <div class="header-content">
+            <img src="/assets/icons/fotogramLogo.png" alt="Logo_Fotogram">
+            <img src="/assets/icons/fotogramText.png" alt="Fotogram">
+        </div>
+    </header>
+
+
+    <main class="main-content">
+        <section class="main-head">
+            <h1>Your personal photo album</h1>
+        </section>
+
+        <section class="thumb-slider">
+            <button id="thumb-btn" class="thumb-btn" aria-label="Bild 'Bird sitting on a tree' aufrufen">
+                <img class="thumb-img" src="/assets/img/BirdOnATree.jpg" alt="Bird sitting on a tree">
+            </button>
+            <button id="thumb-btn" class="thumb-btn" aria-label="Bild 'Bird sitting on a tree' aufrufen">
+                <img class="thumb-img" src="/assets/img/BirdOnATree.jpg" alt="Bird sitting on a tree">
+            </button>
+      
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="da-logo">
+                    <img src="/assets/icons/DaLogo.png" alt="">
+                    <img src="/assets/icons/DaText.png" alt="">
+                </div>
+                <img src="/assets/icons/DeveloperAkademieGmbH.png" alt="">
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

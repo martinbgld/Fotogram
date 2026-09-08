@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(6, 23, 30, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 81px;
+    background-color: rgba(9, 33, 42, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: bottom;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0px 16px;
+}
+
+.main-content {
+    flex: 1;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    padding: 81px 16px 128px;
+}
+
+.main-head>h1 {
+    font-family: 'Figtree';
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.thumb-slider{
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid grey;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    gap: 16px;
+    padding: 24px;
+}
+
+
+.thumb-btn {
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    border-radius: 16px;
+    border: 2px solid rgba(18, 70, 88, 1);
+    background: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color ease 180ms;
+}
+
+.thumb-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    transition: all ease 180ms;
+}
+
+.thumb-btn:hover,
+.thumb-btn:focus-visible {
+        border: 3px solid rgba(107, 193, 225, 1);
+}
+
+.thumb-btn:hover .thumb-img,
+.thumb-btn:focus-visible .thumb-img{
+        scale: 1.06;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 128px;
+    border-top-left-radius: 50% 28px;
+    border-top-right-radius: 50% 28px;
+    background-color: rgba(9, 33, 42, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0px 16px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.da-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
