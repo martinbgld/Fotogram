@@ -1,5 +1,5 @@
-const imgDir = '/assets/img/';
-const thumbDir = '/assets/thumb/thumb_'
+const imgDir = './assets/img/';
+const thumbDir = './assets/thumb/thumb_'
 
 const thumbSlider = document.getElementById('thumb-slider');
 
