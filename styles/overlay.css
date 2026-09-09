@@ -39,6 +39,7 @@
     color: white;
     font-size: 1.5rem;
     font-weight: 700;
+    word-break: break-word;
 }
 
 .overlay-btnClose {
@@ -158,6 +159,11 @@
 
 
 @media (max-width: 540px) {
+
+    .overlay-header>h2 {
+        font-weight: 500;
+        word-break: break-word;
+    }
 
     .overlay-content {
         grid-template-rows: 8rem minmax(0, 1fr) 6rem;

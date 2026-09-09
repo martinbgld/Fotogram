@@ -1,14 +1,7 @@
 const imgDir = './assets/img/';
 const thumbDir = './assets/thumb/thumb_'
-
 const thumbSlider = document.getElementById('thumb-slider');
-
-
-function init() {
-    thumbSliderDisplay();
-}
-
-let imgGallery = [
+const imgGallery = [
     {
         src: 'IceLake.jpg',
         alt: 'Picture: IceLake.jpg',
@@ -71,23 +64,38 @@ let imgGallery = [
     },
 ]
 
+function init() {
+    thumbSliderDisplay();
+}
+
 function thumbSliderDisplay() {
 
-    for (let i = 0; i < imgGallery.length; i++) {
-        const thumbButton = document.createElement('button');
-        const thumbImage = document.createElement('img');
-        const actualImage = imgGallery[i];
+    thumbSlider.replaceChildren();
 
-        thumbImage.src = thumbDir + actualImage.src;
-        thumbImage.alt = actualImage.alt;
-        thumbImage.classList.add("thumb-img");
+    imgGallery.forEach((actualImage, i) => {
+        thumbSlider.append(createThumbButton(actualImage, i));
+    });
+}
 
-        thumbButton.type = 'button';
-        thumbButton.classList.add('thumb-btn');
-        thumbButton.ariaLabel = actualImage.ariaLabel;
-        thumbButton.dataset.index = i;
+function createThumbButton(actualImage, i) {
+    const thumbButton = document.createElement('button');
+    const thumbImage = createThumbImage(actualImage);
 
-        thumbButton.append(thumbImage);
-        thumbSlider.append(thumbButton);
-    }
+    thumbButton.type = 'button';
+    thumbButton.classList.add('thumb-btn');
+    thumbButton.ariaLabel = actualImage.ariaLabel;
+    thumbButton.dataset.index = i;
+
+    thumbButton.append(thumbImage);
+    return thumbButton;
+}
+
+function createThumbImage(actualImage) {
+    const thumbImage = document.createElement('img');
+
+    thumbImage.src = thumbDir + actualImage.src;
+    thumbImage.alt = actualImage.alt;
+    thumbImage.classList.add("thumb-img");
+
+    return thumbImage;
 }

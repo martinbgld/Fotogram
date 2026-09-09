@@ -18,15 +18,6 @@ thumbSlider.addEventListener('click', (event) => {
     overlayOpen();
 })
 
-// document.addEventListener('click', (event) => {
-//     const clickedInsideOverlay = overlay.contains(event.target);
-//     const overlayIsHidden = overlay.classList.contains('is-hidden');
-
-//     if (!clickedInsideOverlay && !overlayIsHidden) {
-//         overlayClose();
-//     }
-// })
-
 overlay.addEventListener('click', (event) => {
     if (event.target === event.currentTarget) {
         overlayClose();
@@ -40,7 +31,7 @@ document.addEventListener('keydown', (event) => {
     const overlayIsHidden = overlay.classList.contains('is-hidden');
 
     if (clickedKey === 'Escape' && !overlayIsHidden) {
-    console.log('Overlay closed by klicking ' + clickedKey)
+        console.log('Overlay closed by klicking ' + clickedKey)
         overlayClose();
     }
 })
@@ -68,18 +59,20 @@ overlayBtnNext.addEventListener('click', () => {
 
 function selectImage() {
     const maxImageIndex = imgGallery.length;
-
     if (currentImageIndex >= maxImageIndex) {
         currentImageIndex = 0;
     }
     else if (currentImageIndex < 0) {
-        currentImageIndex = maxImageIndex-1;
+        currentImageIndex = maxImageIndex - 1;
     }
     const currentImageNumber = Number(currentImageIndex) + 1;
     const selectedImage = imgGallery[currentImageIndex];
+    selectImagedetail(selectedImage);
+    overlayCount.innerHTML = (currentImageNumber + '/' + maxImageIndex);
+}
 
+function selectImagedetail(selectedImage) {
     overlayImageTitle.innerHTML = selectedImage.src;
     overlayImage.src = imgDir + selectedImage.src;
     overlayImage.alt = selectedImage.alt;
-    overlayCount.innerHTML = (currentImageNumber + '/' + maxImageIndex);
 }
